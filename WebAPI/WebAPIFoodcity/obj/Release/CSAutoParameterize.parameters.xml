@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Connectionstringfoodcity-Web.config Connection String" description="Connectionstringfoodcity Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-CFTP6B2\SQLEXPRESS;Initial Catalog=Foodcity;User ID=userfoodcit;Password=321654;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\20520\\source\\repos\\WebAPI\\WebAPIFoodcity\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Connectionstringfoodcity']/@connectionString" />
+  </parameter>
+</parameters>

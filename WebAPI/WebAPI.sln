@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{3229E35A-DDE8-421E-8743-A400683D6700}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIFoodcity", "WebAPIFoodcity\WebAPIFoodcity.csproj", "{23F5A5DA-14F2-47C5-B281-016EFD108634}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3229E35A-DDE8-421E-8743-A400683D6700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3229E35A-DDE8-421E-8743-A400683D6700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3229E35A-DDE8-421E-8743-A400683D6700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3229E35A-DDE8-421E-8743-A400683D6700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23F5A5DA-14F2-47C5-B281-016EFD108634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F5A5DA-14F2-47C5-B281-016EFD108634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F5A5DA-14F2-47C5-B281-016EFD108634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F5A5DA-14F2-47C5-B281-016EFD108634}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C170D3E-48CD-4FCF-B33E-AA27BDB1F0E5}
+	EndGlobalSection
+EndGlobal

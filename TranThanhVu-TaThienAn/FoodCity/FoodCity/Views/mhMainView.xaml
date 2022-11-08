@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="FoodCity.Views.mhMainView"
+            xmlns:view="clr-namespace:FoodCity.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            BarBackgroundColor="#dbd6d6"
+            BarTextColor="Orange" 
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="#22abd8"
+            android:TabbedPage.BarSelectedItemColor="Orange"
+            NavigationPage.HasNavigationBar="False"
+            
+            >
+  <!--Pages can be added as references or inline-->
+    <view:mhHome IconImageSource="home.png"/>
+    <view:mhWelcome IconImageSource="bell.png"/>
+    <view:mhCart IconImageSource="cart.png" />
+    <view:mhInfoUser IconImageSource="user.png"/>
+</TabbedPage>

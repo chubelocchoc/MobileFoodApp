@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodCity.Views.mhWelcome"
+             BackgroundColor="#FFD8A8"
+             NavigationPage.HasNavigationBar="False"
+             >
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <!--Hình thương hiệu-->
+            <Image Source="IconFoodcity.png" Margin="30, 20, 30, 0"/>
+            
+            <!--Hình Welcome-->
+            <Image Source="welome.png" Margin="30, 0, 30, 0"/>
+            
+            <!--Hình ticker ok-->
+            <Image Source="tickerOk.png" Margin="30, 30, 30, -50"/>
+            
+            <!--Dòng chữ chúc mừng thành công đăng ký-->
+            <Label Text="Chúc mừng bạn đã đăng ký tài khoản thành công"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   WidthRequest="250"
+                   FontSize="22" FontFamily="Quicksand" VerticalTextAlignment="Center"/>
+            <!--Nút nhấn chuyển qua trang chủ-->
+            <Button x:Name="btnBatdau" FontSize="28" Text="Trang chủ" BackgroundColor="#FD7E14" CornerRadius="20" 
+                    HeightRequest="70" WidthRequest="300" HorizontalOptions="Center" TextColor="#FFFFFF"
+                    VerticalOptions="Start" Clicked="btnBatdau_Clicked" Margin="0, -20, 0, 20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

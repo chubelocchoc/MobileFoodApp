@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FoodCity.AppConstrants"
+             x:Class="FoodCity.Views.mhListRestaurant"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary MergedWith="local:ProjectResources">
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    
+                    <Frame Padding="5" HeightRequest="40">
+                        <Grid Margin="0" HeightRequest="40">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="btnGantoi" Text="{StaticResource textbtnGanToi}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="0" HeightRequest="30"
+                                    Clicked="btnGantoi_Clicked"/>
+                            <Button x:Name="btnbanchay" Text="{StaticResource textbtnBanChay}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="1" HeightRequest="30"
+                                    Clicked="btnbanchay_Clicked"/>
+                            <Button x:Name="btndanhgia" Text="{StaticResource textbtnDanhGia}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="2" HeightRequest="30"
+                                    Clicked="btndanhgia_Clicked"/>
+                            <Button x:Name="btngiaonhanh" Text="{StaticResource textbtnGiaoNhanh}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="3" HeightRequest="30"
+                                    Clicked="btngiaonhanh_Clicked"/>
+                        </Grid>
+                    </Frame>
+                    <Button x:Name="btnTroVe"  Text="Back" Grid.Column="0"
+                            BackgroundColor="White" HorizontalOptions="Start"
+                            HeightRequest="30" Padding="0,0,0,0" Clicked="btnTroVe_Clicked" 
+                            FontSize="10" Margin="0,0,0,0" CornerRadius="10"/>
+                    <!--<StackLayout x:Name="lsFilter" BackgroundColor="Beige">
+                    <Line BackgroundColor="Orange" WidthRequest="100" HeightRequest="3"/>
+                    </StackLayout>-->
+                    <Frame BackgroundColor="#F8F9FA" Padding="0">
+                        <StackLayout>
+                            <ListView x:Name="lsDS" HasUnevenRows="True" Margin="10,5,10,5" ItemSelected="lsDS_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell Height="110">
+                                            <Frame BackgroundColor="White" CornerRadius="10" Padding="2"
+                                               HasShadow="True">
+                                                <Grid ColumnSpacing="10">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Source="{Binding hurl}" Grid.Row="0" Grid.Column="0"
+                                                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                                    <StackLayout Grid.Row="0" Grid.Column="1" Spacing="5" Padding="5">
+
+                                                        <Label Text="{Binding fname}" TextColor="Black" MaxLines="1" LineBreakMode="TailTruncation"
+                                                               Style="{StaticResource size16}"/>
+
+                                                        <Label Text="{Binding fdiscription}" MaxLines="1" LineBreakMode="TailTruncation"
+                                                               Style="{StaticResource size14}"/>
+
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Image Source="location.png" HorizontalOptions="FillAndExpand" Grid.Column="0"/>
+                                                            <Label Text="{Binding raddress}" Grid.Column="1"/>
+                                                        </Grid>
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="2"/>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="45"/>
+                                                                <ColumnDefinition Width="2"/>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="45"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Image Source="starIcon.png" HorizontalOptions="FillAndExpand" Scale="1.5"
+                                                               Grid.Column="0"/>
+                                                            <Label Text="{Binding rating}" Grid.Column="1"/>
+                                                            <Label Text="|" Grid.Column="2"/>
+                                                            <Image Source="iconViTri.png" HorizontalOptions="FillAndExpand" Scale="1.5"
+                                                               Grid.Column="3"/>
+                                                            <Label Text="1.5 km" Grid.Column="4"/>
+                                                            <Label Text="|" Grid.Column="5"/>
+                                                            <Image Source="timeIcon.png" HorizontalOptions="FillAndExpand" Scale="1.5"
+                                                               Grid.Column="6"/>
+                                                            <Label Text="20 phut" Grid.Column="7"/>
+                                                        </Grid>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

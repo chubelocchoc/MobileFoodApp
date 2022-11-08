@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodCity.Views.mhCart"
+             xmlns:local="clr-namespace:FoodCity.AppConstrants">
+
+    <ContentPage.Resources>
+        <ResourceDictionary MergedWith="local:ProjectResources">
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout x:Name="lay">
+            <Label Text="Đơn hàng"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="35"
+                TextColor="Black"/>
+
+            <Label x:Name="txtThongBao" Text="Giỏ hàng rỗng!"
+                VerticalOptions="CenterAndExpand" 
+                FontSize="25"
+                Padding="10"/>
+
+            <ListView x:Name="lsDSreview" HasUnevenRows="True"
+                      VerticalScrollBarVisibility="Never" 
+                      HorizontalScrollBarVisibility="Never"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="110">
+                            <Frame BackgroundColor="White" CornerRadius="10" Padding="2"
+                                               HasShadow="True">
+                                <Grid ColumnSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.Column="0" Spacing="5" Padding="5">
+
+                                        <Label Text="{Binding fname}" TextColor="Black" 
+                                                               Style="{StaticResource size16}"/>
+
+                                        <Label Text="{Binding fdiscription}"
+                                                               Style="{StaticResource size14}"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding fprice}" Grid.Column="1" Grid.Row="0"
+                                           TextColor="Orange" FontSize="20"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            
+
+            <Button Text="Đặt Hàng" FontSize="25" HorizontalOptions="Center"
+                    CornerRadius="10" HeightRequest="50" WidthRequest="200"
+                    Margin="0,0,0,30"
+                    Clicked="Button_Clicked" x:Name="btnDK"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

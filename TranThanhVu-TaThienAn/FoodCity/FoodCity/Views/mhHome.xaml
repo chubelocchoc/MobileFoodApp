@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodCity.Views.mhHome"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             xmlns:local="clr-namespace:FoodCity.AppConstrants"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary MergedWith="local:ProjectResources">
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Thanh tim kiem va vi tri-->
+            <Grid WidthRequest="380" 
+                  Margin="10, 5, 10, -3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView BackgroundColor="{StaticResource coBgrVitri}" CornerRadius="10" Grid.Row="0" Grid.ColumnSpan="4" 
+                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <SearchBar x:Name="sbTimkiem" Placeholder="Tìm Kiếm" Grid.Column="0" Grid.ColumnSpan="2"
+                           TextChanged="sbTimkiem_TextChanged"/>
+                
+                <Button x:Name="btnViTri" Text="Thủ Đức" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"
+                            HorizontalOptions="Start" BackgroundColor="{StaticResource coBgrVitri}"
+                        Clicked="btnimagevitri_Clicked"
+                       />
+                <ImageButton x:Name="btnimagevitri" Source="iconVitri.png" HeightRequest="50" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center"
+                             BackgroundColor="{StaticResource coBgrVitri}" Clicked="btnimagevitri_Clicked"/>
+            </Grid>
+
+            <!--Man hinh body-->
+            <ScrollView Orientation="Vertical" BackgroundColor="{StaticResource coBgrHome}">
+                <StackLayout>
+                    <CarouselView x:Name="carQuangcao" Loop="True" CurrentItemChanged="carQuangcao_CurrentItemChanged"
+                              BackgroundColor="{StaticResource coBgrHome}" HeightRequest="150" Margin="0"
+                              IndicatorView="intercatorView">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <ImageButton x:Name="imAdver" Source="{Binding aimage}" HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0"
+                                                 Clicked="ImageButton_Clicked"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    
+                    <IndicatorView x:Name="intercatorView"
+                               IndicatorColor="LightGray"
+                               SelectedIndicatorColor="{StaticResource coBtnSeleted}"
+                               HorizontalOptions="Center"
+                               Padding="5"
+                               WidthRequest="200"
+                               IndicatorSize="10"/>
+
+                    <!--Cac the loai lua chua-->
+                    <Grid x:Name="gridTheLoai" HorizontalOptions="Center"
+                      VerticalOptions="Center" RowSpacing="10" Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="65"/>
+                            <RowDefinition Height="65"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Frame Grid.Row="0" Grid.Column="0" Padding="2" HorizontalOptions="Center"
+                               WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Com" Source="com.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Cơm" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="1" Padding="2" HorizontalOptions="Center" 
+                               WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Monnuoc" Source="monnuoc.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Món nước" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="2" Padding="2" HorizontalOptions="Center" 
+                               WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Monchay" Source="dochay.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Món chay" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="3" Padding="2" HorizontalOptions="Center" 
+                               WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Anvat" Source="anvat.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Ăn vặt" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="0" Grid.Column="4" Padding="2" HorizontalOptions="Center"
+                                 WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Lau" Source="lau.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Lẩu" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="1" Grid.Column="0" Padding="2" HorizontalOptions="Center"
+                                 WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Douong" Source="douong.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Đố uống" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="1" Grid.Column="1" Padding="2" HorizontalOptions="Center"
+                                 WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Banhkem" Source="banhkem.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Bánh kem" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="1" Grid.Column="2" Padding="2" HorizontalOptions="Center"
+                                 WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Trangmieng" Source="trangmieng.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Tráng miệng" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="1" Grid.Column="3" Padding="2" HorizontalOptions="Center"
+                                 WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Banh" Source="banh.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Bánh" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="1" Grid.Column="4" Padding="2" HorizontalOptions="Center"
+                                 WidthRequest="100" HasShadow="True" CornerRadius="5" BorderColor="Gray">
+                            <StackLayout>
+                                <ImageButton x:Name="Chao" Source="chao.png" HeightRequest="35" Clicked="Com_Clicked"/>
+                                <Label Text="Cháo" HorizontalOptions="Center" VerticalOptions="End"/>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+
+                    <!--Chu de firstScroll-->
+                    <Grid x:Name="gridFirst" Padding="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{StaticResource textFirstScroll}" Grid.Column="0" FontSize="Large" TextColor="Black"
+                               VerticalTextAlignment="End"/>
+                        <Button Text="{StaticResource textXemTatCa}" Grid.Column="1" VerticalOptions="End" Margin="0,0,0,-10"
+                                HorizontalOptions="End" BackgroundColor="{StaticResource coBgrHome}"
+                                TextColor="{StaticResource coBtnSeleted}" x:Name="btnXemChude1" 
+                                Clicked="btnXemChude1_Clicked"/>
+                    </Grid>
+
+                    <ScrollView x:Name="scrollFirst" Orientation="Horizontal">
+                        <StackLayout x:Name="lsFirstScroll" Orientation="Horizontal" BackgroundColor="Beige"
+                                     Spacing="10">
+                        </StackLayout>
+                    </ScrollView>
+
+                    <!--Chu de secondScroll-->
+                    <Grid x:Name="gridSecond" Padding="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{StaticResource textSecondScroll}" Grid.Column="0" FontSize="Large" TextColor="Black"
+                               VerticalTextAlignment="End"/>
+                        <Button Text="{StaticResource textXemTatCa}" Grid.Column="1" VerticalOptions="End" Margin="0,0,0,-10"
+                                HorizontalOptions="End" BackgroundColor="{StaticResource coBgrHome}"
+                                TextColor="{StaticResource coBtnSeleted}" x:Name="btnXemChude2" 
+                                Clicked="btnXemChude2_Clicked"/>
+                    </Grid>
+
+                    <ScrollView x:Name="scrollSecond" Orientation="Horizontal">
+                        <StackLayout x:Name="lsSecondScroll" Orientation="Horizontal" BackgroundColor="Beige">
+                        </StackLayout>
+                    </ScrollView>
+                    
+                    <Frame x:Name="frButton" Padding="5" HeightRequest="40">
+                        <Grid Margin="0" HeightRequest="40">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btnGantoi" Text="{StaticResource textbtnGanToi}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="0" HeightRequest="30"
+                                    Clicked="btnGantoi_Clicked"/>
+                            <Button x:Name="btnbanchay" Text="{StaticResource textbtnBanChay}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="1" HeightRequest="30"
+                                    Clicked="btnbanchay_Clicked"/>
+                            <Button x:Name="btndanhgia" Text="{StaticResource textbtnDanhGia}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="2" HeightRequest="30"
+                                    Clicked="btndanhgia_Clicked"/>
+                            <Button x:Name="btngiaonhanh" Text="{StaticResource textbtnGiaoNhanh}" CornerRadius="8"
+                                    Grid.Row="0" Grid.Column="3" HeightRequest="30"
+                                    Clicked="btngiaonhanh_Clicked"/>
+                        </Grid>
+                        
+                    </Frame>
+                    <!--<StackLayout x:Name="lsFilter" BackgroundColor="Beige">
+                    <Line BackgroundColor="Orange" WidthRequest="100" HeightRequest="3"/>
+                    </StackLayout>-->
+                    <Frame BackgroundColor="#F8F9FA" Padding="0">
+                        <StackLayout>
+                            <ListView x:Name="lsDS" HasUnevenRows="True" Margin="10,5,10,5" 
+                                      VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never"
+                                      ItemSelected="lsDS_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell Height="110">
+                                            <Frame BackgroundColor="White" CornerRadius="10" Padding="2"
+                                               HasShadow="True">
+                                                <Grid ColumnSpacing="10">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Source="{Binding hurl}" Grid.Row="0" Grid.Column="0"
+                                                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                                    <StackLayout Grid.Row="0" Grid.Column="1" Spacing="5" Padding="5">
+
+                                                        <Label Text="{Binding fname}" TextColor="Black" MaxLines="1" LineBreakMode="TailTruncation"
+                                                               Style="{StaticResource size16}"/>
+
+                                                        <Label Text="{Binding fdiscription}" MaxLines="1" LineBreakMode="TailTruncation"
+                                                               Style="{StaticResource size14}"/>
+                                                        
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Image Source="location.png" HorizontalOptions="FillAndExpand" Grid.Column="0"/>
+                                                            <Label Text="{Binding raddress}" Grid.Column="1"/>
+                                                        </Grid>
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="2"/>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="45"/>
+                                                                <ColumnDefinition Width="2"/>
+                                                                <ColumnDefinition Width="10"/>
+                                                                <ColumnDefinition Width="45"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Image Source="starIcon.png" HorizontalOptions="FillAndExpand" Scale="1.5"
+                                                               Grid.Column="0"/>
+                                                            <Label Text="{Binding ftype}" Grid.Column="1"/>
+                                                            <Label Text="|" Grid.Column="2"/>
+                                                            <Image Source="iconViTri.png" HorizontalOptions="FillAndExpand" Scale="1.5"
+                                                               Grid.Column="3"/>
+                                                            <Label Text="1.5 km" Grid.Column="4"/>
+                                                            <Label Text="|" Grid.Column="5"/>
+                                                            <Image Source="timeIcon.png" HorizontalOptions="FillAndExpand" Scale="1.5"
+                                                               Grid.Column="6"/>
+                                                            <Label Text="20 phut" Grid.Column="7"/>
+                                                        </Grid>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Frame>
+                    
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodCity.AppConstrants.ProjectResources">
+
+    
+    <x:String x:Key="textFirstScroll">Băng giá cho ngày nóng!</x:String>
+    <x:String x:Key="textSecondScroll">Nóng hổi cho ngày mưa!</x:String>
+    <x:String x:Key="textThirtScroll">Giảm hết giá, đặt thả ga!</x:String>
+    <x:String x:Key="textXemTatCa">Xem tất cả>></x:String>
+    <x:String x:Key="textbtnGanToi">Gần tôi</x:String>
+    <x:String x:Key="textbtnBanChay">Bán chạy</x:String>
+    <x:String x:Key="textbtnDanhGia">Đánh giá</x:String>
+    <x:String x:Key="textbtnGiaoNhanh">Giao nhanh</x:String>
+    <x:String x:Key="textbtnDatmon">Đặt món</x:String>
+    <x:String x:Key="textbtnDanhgia">Đánh giá</x:String>
+    <x:String x:Key="textbtnThongtin">Thông tin</x:String>
+
+    <Color x:Key="coBtnSeleted">#FD7E14</Color>
+    <Color x:Key="coBgrVitri">#F1F3F5</Color>
+    <Color x:Key="coBgrHome">#FFF4E6</Color>
+    <Color x:Key="coWhite">#FFFFFF</Color>
+    <Color x:Key="coTextMo">#868E96</Color>
+
+    <FontAttributes x:Key="InputFontStyle">Italic</FontAttributes>
+
+    <FontAttributes x:Key="BtFontStyle">Bold</FontAttributes>
+
+
+    <Style TargetType="Label">
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="CornerRadius" Value="10"/>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource coTextMo}"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="TextColor" Value="Black"/>
+    </Style>
+
+    <Style TargetType="ImageButton">
+        <Setter Property="BackgroundColor" Value="White"/>
+    </Style>
+
+    <Style x:Key="size16" TargetType="Label">
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style x:Key="size14" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+</ResourceDictionary>
